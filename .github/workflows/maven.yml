@@ -23,4 +23,13 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn clean install 
+      run: mvn clean install
+    - name: Build and push docker image
+      uses: mr-smithers-excellent/docker-build-push@v5
+        with:
+          image: akshayatonde/git-actions-cicd
+          tags: latest
+          registry: docker.io
+          dockerfile: Dockerfile
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
