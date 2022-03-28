@@ -12,7 +12,7 @@ public class GithubCicdApplication {
 	@GetMapping("/welcome")
 	public String welcome(){
 
-		return "Welcome to the app Test 1 version 1";
+		return "Welcome to the app Test 1 version 1 of the app";
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(GithubCicdApplication.class, args);
